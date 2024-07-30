@@ -14,10 +14,10 @@ namespace AhorcadoAspNet
         { get { return (string)ViewState["SelectedWord"]; } set { ViewState["SelectedWord"] = value; } }
 
         private List<char> CorrectLetters
-        { get { return (List<char>)ViewState["CorrectLetters"] ?? new List<char>(); } set { ViewState["CorrectLetters"] = value; }}
+        { get { return (List<char>)ViewState["CorrectLetters"] ?? new List<char>(); } set { ViewState["CorrectLetters"] = value; } }
 
         private List<char> WrongLetters
-        {get { return (List<char>)ViewState["WrongLetters"] ?? new List<char>(); }set { ViewState["WrongLetters"] = value; }}
+        { get { return (List<char>)ViewState["WrongLetters"] ?? new List<char>(); } set { ViewState["WrongLetters"] = value; } }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -109,6 +109,8 @@ namespace AhorcadoAspNet
         {
             InitializeGame();
             BindAlphabetRepeater();
+            DisplayWord();
+            wrongLettersContainer.Text = "";
         }
 
         private void EnableAlphabetButtons(bool enable)
